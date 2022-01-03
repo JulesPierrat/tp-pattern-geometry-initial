@@ -36,4 +36,12 @@ public class LineString implements Geometry {
     public boolean isEmpty(){
         return (this.getNumPoints() == 0);
     }
+
+    public void translate (double dx, double dy){
+        if (! isEmpty()) {
+            for(int i = 0 ; i < getNumPoints() ; i++){
+                getPointN(i).translate(dx, dy);
+            }
+        }
+    }
 }

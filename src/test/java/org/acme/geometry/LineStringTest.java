@@ -7,6 +7,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class LineStringTest {
+
+	public static final double EPSILON = 1.0e-15;
     
     @Test
 	public void testDefaultConstructor(){
@@ -22,5 +24,22 @@ public class LineStringTest {
 
 		LineString line2 = new LineString();
 		Assert.assertEquals(true, line2.isEmpty());
+	}
+
+	@Test
+	public void testDefaultTranslation(){
+		// TODO
+		Point point1 = new Point(new Coordinate(1.0, 1.0));
+		Point point2 = new Point(new Coordinate(2.0, 2.0));
+		List<Point> points = new ArrayList<>();
+		points.add(point1);
+		points.add(point2);
+		LineString line = new LineString(points);
+		line.translate(-1.0, -1.0);
+
+		Assert.assertEquals(0.0, line.getPointN(0).getCoordinate().getX(), EPSILON);
+		Assert.assertEquals(0.0, line.getPointN(0).getCoordinate().getY(), EPSILON);
+		Assert.assertEquals(1.0, line.getPointN(1).getCoordinate().getX(), EPSILON);
+		Assert.assertEquals(1.0, line.getPointN(1).getCoordinate().getY(), EPSILON);
 	}
 }

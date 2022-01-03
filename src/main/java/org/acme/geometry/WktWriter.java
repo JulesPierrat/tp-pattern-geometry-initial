@@ -25,11 +25,11 @@ public class WktWriter {
             String r = "LINESTRING(";
             for(int i = 0 ; i < line.getNumPoints() ; i++){
                 r += line.getPointN(i).getCoordinate().getX() + " " + line.getPointN(i).getCoordinate().getY();
-                if (i != line.getNumPoints() - 2){
+                if (i != line.getNumPoints() - 1){
                     r += ",";
                 }
-                r += ")";
             }
+            r += ")";
             return r;
         } else {
             throw new RuntimeException("geometry type not supported");

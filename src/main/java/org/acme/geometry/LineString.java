@@ -49,4 +49,16 @@ public class LineString implements Geometry {
             }
         }
     }
+
+    public Envelope getEnvelope(){
+        EnvelopeBuilder builder = new EnvelopeBuilder();
+        if (isEmpty()) {
+            return new Envelope();
+        } else {
+            for(int i = 0 ; i < getNumPoints() ; i++){
+                builder.insert(getPointN(i).getCoordinate());
+            }
+            return builder.build();
+        }
+    }
 }

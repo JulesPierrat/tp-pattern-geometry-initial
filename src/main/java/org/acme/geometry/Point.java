@@ -21,6 +21,11 @@ public class Point implements Geometry {
         return this.coordinate;
     }
 
+    // Clone
+    public Point clone(){
+        return new Point(this.coordinate);
+    }
+
     // Method
     public String getType(){
         return "Point";
@@ -37,4 +42,6 @@ public class Point implements Geometry {
             this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
         }
     }
+
+
 }

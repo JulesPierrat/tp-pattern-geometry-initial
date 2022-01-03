@@ -18,7 +18,8 @@ public class PointTest {
 		Assert.assertEquals(true , point.isEmpty());
 
 	}
-
+	
+	@Test
 	public void testDefaultTranslation(){
 		Point point = new Point(new Coordinate(0.0, 0.0));
 		Point point2 = new Point(new Coordinate(2.0, 2.0));
@@ -32,5 +33,15 @@ public class PointTest {
 		Assert.assertEquals(point2.getCoordinate().getX(), point3.getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(point2.getCoordinate().getY(), point3.getCoordinate().getY(), EPSILON);
 
+	}
+
+	@Test
+	public void TestDefaultClone(){
+		Point point = new Point( new Coordinate(2.0, 2.0));
+		Point point1 = point;
+		Point copy = point.clone();
+		copy.translate(10.0, 10.0);
+
+		Assert.assertEquals(point, point1);
 	}
 }

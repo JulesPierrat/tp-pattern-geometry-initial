@@ -28,6 +28,11 @@ public class LineString implements Geometry {
         return this.points.get(n);
     }
 
+    // Clone
+    public LineString clone(){
+        return new LineString(this.points);
+    }
+
     // Method
     public String getType(){
         return "LineString";

@@ -19,5 +19,8 @@ public class LineStringTest {
 		Assert.assertEquals(point, line.getPointN(0));
 		Assert.assertEquals("LineString", line.getType());
 		Assert.assertEquals(1, line.getNumPoints());
+
+		LineString line2 = new LineString();
+		Assert.assertEquals(true, line2.isEmpty());
 	}
 }

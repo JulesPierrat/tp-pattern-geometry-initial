@@ -13,5 +13,6 @@ public class PointTest {
 
 		Assert.assertEquals(coords, point.getCoordinate());
 		Assert.assertEquals("Point", point.getType());
+		Assert.assertEquals(true , point.isEmpty());
 	}
 }

@@ -29,4 +29,12 @@ public class Point implements Geometry {
     public boolean isEmpty(){
         return this.coordinate.isEmpty();
     }
+
+    public void translate(double dx, double dy){
+        if (this.coordinate.isEmpty()) {
+            this.coordinate = new Coordinate(dx, dy);
+        } else {
+            this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
+        }
+    }
 }

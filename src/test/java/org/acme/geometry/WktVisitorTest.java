@@ -29,7 +29,6 @@ public class WktVisitorTest {
         line.accept(v2);
 
         // Test
-        System.out.println(v1.getResult());
         Assert.assertEquals("POINT(2.0 3.0)", v1.getResult());
         Assert.assertEquals("LINESTRING(2.0 3.0,4.0 5.0)", v2.getResult());
 

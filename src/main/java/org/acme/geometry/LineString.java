@@ -47,6 +47,7 @@ public class LineString extends AbstractGeometry {
             for(int i = 0 ; i < getNumPoints() ; i++){
                 getPointN(i).translate(dx, dy);
             }
+            triggerChange();
         }
     }
 

@@ -9,7 +9,7 @@ import org.junit.Test;
 public class WktVisitorTest {
     
     @Test
-    public void TestDefaultConstructor(){
+    public void testDefaultConstructor(){
         // Create WktVisitor
         WktVisitor v1 = new WktVisitor();
         WktVisitor v2 = new WktVisitor();

@@ -37,7 +37,6 @@ public class GeoJSONWriterTest {
         String r3 = w3.write(line);
 
         // Test
-        System.out.println(r3);
         Assert.assertEquals("{'type': 'FeaturesCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinate': [3.0, 4.0]}},{'type': 'Feature', 'geometry': {'type': 'LineString', 'coordinate': [[2.0, 3.0],[4.0, 5.0]]}}]}", r);
         Assert.assertEquals("{'type': 'FeaturesCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'Point', 'coordinate': [2.0, 3.0]}}]}", r2);
         Assert.assertEquals("{'type': 'FeaturesCollection', 'features': [{'type': 'Feature', 'geometry': {'type': 'LineString', 'coordinate': [[2.0, 3.0],[4.0, 5.0]]}]}", r3);

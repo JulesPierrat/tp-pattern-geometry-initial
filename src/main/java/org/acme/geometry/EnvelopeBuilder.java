@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class EnvelopeBuilder {
+public class EnvelopeBuilder implements GeometryVisitor{
     // Attribute
     private List<Double> x = new ArrayList<>();
     private List<Double> y = new ArrayList<>();
@@ -29,6 +29,16 @@ public class EnvelopeBuilder {
         double yMax = Collections.max(this.y);
     
         return new Envelope(new Coordinate(xMin, yMin), new Coordinate(xMax, yMax));
+    }
+
+    public void visit(Point point) {
+        insert(point.getCoordinate());
+    }
+
+    public void visit(LineString line) {
+        for(int i = 0 ; i < line.getNumPoints() ; i++){
+            insert(line.getPointN(i).getCoordinate());
+        }        
     }
 
 }

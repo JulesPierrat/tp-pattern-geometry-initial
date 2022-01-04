@@ -1,6 +1,6 @@
 package org.acme.geometry;
 
-public class Point extends AbstracGeometry {
+public class Point extends AbstractGeometry {
     // Attributes
     private Coordinate coordinate;
 

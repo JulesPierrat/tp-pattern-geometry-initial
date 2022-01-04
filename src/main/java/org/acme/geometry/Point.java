@@ -41,6 +41,7 @@ public class Point extends AbstractGeometry {
         } else {
             this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
         }
+        triggerChange();
     }
 
     public Envelope getEnvelope(){
@@ -54,6 +55,4 @@ public class Point extends AbstractGeometry {
     public void accept(GeometryVisitor visitor) {
         visitor.visit(this);
     }
-
-
 }

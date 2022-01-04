@@ -1,6 +1,6 @@
 package org.acme.geometry;
 
-public class WktWriter {
+public class WktWriter implements GeometryWriter{
     // Attribute
 
     // Constructor
@@ -9,6 +9,10 @@ public class WktWriter {
     }
     
     // Method
+    public String getName() {
+        return "WKT";
+    }
+    
     public String write(Geometry geometry){
         // case of a point
         if (geometry.getType() == "Point"){
